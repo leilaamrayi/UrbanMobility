@@ -4,6 +4,7 @@ import com.example.UrbnMobility.model.AuthDetail;
 import com.example.UrbnMobility.security.JwtCreater;
 import com.example.UrbnMobility.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -43,20 +44,23 @@ public class AuthController {
             authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(username, password)
             );
-        } catch (BadCredentialsException e) {
+      /*  } catch (BadCredentialsException e) {
             return ResponseEntity.badRequest().body("Invalid credentials");
+        }*/
+
+            // Set the authentication in the SecurityContext
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            // Load user details
+            UserDetails userDetails = userService.loadUserByUsername(username);
+
+            // Generate JWT token
+            String jwt = jwtCreater.generateToken(userDetails);
+
+            // Return the JWT token in the response
+            return ResponseEntity.ok(jwt);
+        } catch (BadCredentialsException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
-
-        // Set the authentication in the SecurityContext
-         SecurityContextHolder.getContext().setAuthentication(authentication);
-
-        // Load user details
-        UserDetails userDetails = userService.loadUserByUsername(username);
-
-        // Generate JWT token
-        String jwt = jwtCreater.generateToken(userDetails);
-
-        // Return the JWT token in the response
-        return ResponseEntity.ok(jwt);
     }
 }

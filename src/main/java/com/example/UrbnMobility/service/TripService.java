@@ -14,9 +14,6 @@ public class TripService {
 
     @Autowired
     private UserService userService;
-
-
-
     public List<Trip> searchTrips(String origin, String destination) {
         List<Trip> foundTrips = new ArrayList<>();
 

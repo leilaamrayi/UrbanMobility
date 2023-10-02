@@ -38,7 +38,7 @@ public class JwtFilter extends OncePerRequestFilter {
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             String jwt = authorizationHeader.substring(7);
             try {
-                //username = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(jwt).getBody().getSubject();
+
                 Claims claims = jwtCreater.extractAllClaims(jwt);
                 username = jwtCreater.extractUsername(jwt);
             } catch (SignatureException | MalformedJwtException | ExpiredJwtException | IllegalArgumentException e) {
@@ -48,7 +48,7 @@ public class JwtFilter extends OncePerRequestFilter {
             jwtCreater.validateToken(authorizationHeader);
         }
 
-//        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+
         if (username != null) {
             UserDetails userDetails = userService.loadUserByUsername(username);
             if (userDetails != null) {

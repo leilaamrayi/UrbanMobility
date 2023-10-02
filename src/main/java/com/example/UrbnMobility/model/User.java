@@ -23,7 +23,7 @@ public class User implements UserDetails {
   private String username;
   private String password;
   private String type;
-  private List<String> roles; // Assuming roles are stored as strings
+  private List<String> roles;
   private String email;
   private String phone;
   private String swishNumber;
