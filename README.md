@@ -4,6 +4,7 @@
 ![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/41433124-ea66-4312-ba14-855672bd30fe)
 
 ## Jenkins - "Production" Pipeline
+![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/f5bc150e-bde5-43f9-a016-036820502d80)
 ![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/befcae57-140b-4e46-9c75-3a65935ae769)
 ![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/00757ff2-9b5f-489d-b87a-907ce4777ed9)
 ![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/36e3b1e3-3fce-4b34-9136-39aa5d0ce8fc)
@@ -14,7 +15,7 @@
 ![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/0c6683d1-15b1-443d-996c-611b8160f7a6)
 ### Jenkins - "Production" Pipeline consol output step 3
 ![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/335f569b-77d3-4e27-865f-eca00f0ac7a1)
-![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/db7f0ec3-0039-4705-9a42-574e1a6fdfec)
+
 
 ### Jenkins - "Production" Pipeline consol output step 4
 ![image](https://github.com/leilaamrayi/UrbanMobility/assets/104760547/8f81c376-731f-4413-88ab-cf6278dd59c1)
