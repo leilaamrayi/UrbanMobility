@@ -21,9 +21,8 @@ public class TripController {
     @Autowired
     private BookingService bookingService;
 
+    //localhost:8081/trips?origin=&destination=vågmasterplatsen
     @GetMapping("")
-    //localhost:8081/trips?origin=toleredsgatan & destination=friskväderstorget
-
     public ResponseEntity<List<Trip>> getListOfTripsByDifferentSuppliers(@RequestParam String origin,
                                                @RequestParam String destination) {
         List<Trip> trips = tripService.searchTrips(origin,destination);

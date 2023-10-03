@@ -44,9 +44,6 @@ public class AuthController {
             authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(username, password)
             );
-      /*  } catch (BadCredentialsException e) {
-            return ResponseEntity.badRequest().body("Invalid credentials");
-        }*/
 
             // Set the authentication in the SecurityContext
             SecurityContextHolder.getContext().setAuthentication(authentication);
